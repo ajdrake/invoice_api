@@ -1,0 +1,27 @@
+{
+    "name": "invoice_api",
+    "version": "1.0.0",
+    "description": "Invoice API",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha tests/invoice.test.js --exit"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ajdrake/invoice_api.git"
+    },
+    "author": "Aaron J Drake",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ajdrake/invoice_api/issues"
+    },
+    "homepage": "https://github.com/ajdrake/invoice_api#readme",
+    "devDependencies": {
+        "chai": "^4.3.4",
+        "mocha": "^9.1.1",
+        "supertest": "^6.1.6"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
