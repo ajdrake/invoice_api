@@ -8,11 +8,11 @@ app.get('/', (req, res) => {
 app.post('/invoice/', (req, res) => {
     console.log("an invoice posted");
     app.locals.count++;
+    res.send('abc');
 })
 
 app.get('/invoice/:invoiceId', (req, res) => {
-    var invoiceId = req.params.invoiceId;
-    app.locals.count++;
+    let invoiceId = req.params.invoiceId;
     console.log(invoiceId);
     res.send(invoiceId);
 })
