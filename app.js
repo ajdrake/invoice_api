@@ -1,14 +1,12 @@
 const express = require('express')
 const { v4: uuidv4 } = require('uuid');
 const app = express()
+
 app.use(express.json());
 app.locals.count = 0;
 app.locals.invoices = [];
-app.get('/', (req, res) => {
-    res.send('<p>POST /invoice</p><p>GET /invoice/{id}</p><p>GET /count</p>');
-});
 
-app.post('/invoice/', (req, res) => {
+app.post('/invoice', (req, res) => {
     app.locals.count++;
     let invoiceId = uuidv4();
     let invoice = req.body;
