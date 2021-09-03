@@ -1,19 +1,31 @@
 const express = require('express')
+const { v4: uuidv4 } = require('uuid');
 const app = express()
+app.use(express.json());
 app.locals.count = 0;
+app.locals.invoices = [];
 app.get('/', (req, res) => {
     res.send('<p>POST /invoice</p><p>GET /invoice/{id}</p><p>GET /count</p>');
 });
 
 app.post('/invoice/', (req, res) => {
     app.locals.count++;
-    res.send('abc');
+    let invoiceId = uuidv4();
+    let invoice = req.body;
+    invoice.id = invoiceId;
+    app.locals.invoices.push(invoice);
+    
+    res.send(invoiceId);
 })
 
 app.get('/invoice/:invoiceId', (req, res) => {
     let invoiceId = req.params.invoiceId;
-    console.log(invoiceId);
-    res.send(invoiceId);
+    let invoices = app.locals.invoices.filter(invoice => invoice.id === invoiceId)
+    if(invoices != null && invoices.length === 1){
+        res.send(invoices[0]);
+    }
+
+    res.status(204).send({ error: "invoice not found" });
 })
 
 app.get('/count', (req, res) => {
