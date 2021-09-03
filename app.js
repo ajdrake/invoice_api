@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('Welcome to CodeHandbook')
+    res.send('<p>POST /invoice</p><p>GET /invoice/{id}</p><p>GET /count</p>');
 });
 
 app.get('/invoice/:invoiceId', (req, res) => {
