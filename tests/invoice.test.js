@@ -5,11 +5,11 @@ const app = require('../app')
 
 describe('Unit testing the /invoice/{id} route', function() {
 
-    it('should return OK status', function() {
+    it('should return No Content status', function() {
       return request(app)
         .get('/invoice/1')
         .then(function(response){
-            assert.equal(response.status, 200)
+            assert.equal(response.status, 204)
         })
     });
 
