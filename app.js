@@ -6,7 +6,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/invoice/', (req, res) => {
-    console.log("an invoice posted");
     app.locals.count++;
     res.send('abc');
 })
