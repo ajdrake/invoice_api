@@ -1,5 +1,4 @@
-# invoice_api
-Invoice API
+# Invoice API
 
 POST /invoice
 GET /invoice/{id}
