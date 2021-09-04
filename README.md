@@ -1,3 +1,14 @@
+# Run locally
+
+```
+node app.js
+```
+
+# Test
+
+```
+npm test
+```
 # Invoice API
 
 - POST /invoice
