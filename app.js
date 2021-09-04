@@ -10,10 +10,15 @@ app.post('/invoice', (req, res) => {
     app.locals.count++;
     let invoiceId = uuidv4();
     let invoice = req.body;
-    invoice.id = invoiceId;
-    app.locals.invoices.push(invoice);
+    if(typeof(invoice.id) === "undefined"){
+        invoice.id = invoiceId;
+        app.locals.invoices.push(invoice);
+    }
+    else if(app.locals.invoices.filter(inv => inv.id === invoice.id).length == 0){
+        app.locals.invoices.push(invoice);
+    }
     
-    res.send(invoiceId);
+    res.send(invoice.id);
 })
 
 app.get('/invoice/:invoiceId', (req, res) => {
