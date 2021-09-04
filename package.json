@@ -4,7 +4,8 @@
     "description": "Invoice API",
     "main": "index.js",
     "scripts": {
-        "test": "mocha tests/invoice.test.js --exit"
+        "test": "mocha tests/invoice.test.js --exit",
+        "pretest": "eslint --ignore-path .gitignore ."
     },
     "repository": {
         "type": "git",
@@ -18,6 +19,7 @@
     "homepage": "https://github.com/ajdrake/invoice_api#readme",
     "devDependencies": {
         "chai": "^4.3.4",
+        "eslint": "^7.32.0",
         "mocha": "^9.1.1",
         "supertest": "^6.1.6"
     },
