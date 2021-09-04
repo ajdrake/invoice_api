@@ -10,7 +10,10 @@ Get on the `/invoice/{invoiceId}` returns the requested invoice (invoiceId shoul
 
 # Docker
 Create the image
+```
 docker build -t invoiceapi .
-
+```
 Run it
+```
 docker run -it --rm -p 3000:3000 invoiceapi
+```
